@@ -1,0 +1,65 @@
+.submit__free__lesson__form {
+    max-width: 60%;
+    margin: 0 auto;
+}
+
+.submit__free__lesson__form h2 {
+    text-align: center;
+}
+
+.submit__free__lesson__form input {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    box-shadow: 0 0 5px #ddd inset;
+    color: #888;
+    font-size: 16px;
+    font-weight: 300;
+    padding: 10px;
+    width: 100%;
+}
+
+.submit__free__lesson__form input:focus {
+    outline: 0;
+    border: 1px solid #aaa;
+}
+
+.form__group {
+    margin-bottom: 1.5em;
+}
+
+.input__header {
+    margin: .5em 0;
+    font-size: 18px;
+}
+
+.input__header::after {
+    content: '*';
+    padding: 0 5px;
+    font-size: 18px;
+}
+
+.input__with__label__wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+.input__with__label {
+    /*display: flex;*/
+    /*flex-direction: column;*/
+    flex-grow: 1;
+}
+
+.input__label {
+    font-size: 14px;
+    padding-left: 5px;
+    padding-top: 5px;
+}
+
+.margin__right {
+    margin-right: 2em;
+}
+
+.birthday {
+    max-width: 60%;
+}
