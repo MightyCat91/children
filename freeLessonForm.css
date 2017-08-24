@@ -33,7 +33,7 @@
     font-size: 18px;
 }
 
-.input__header::after {
+.input__header.required::after {
     content: '*';
     padding: 0 5px;
     font-size: 18px;
@@ -45,8 +45,6 @@
 }
 
 .input__with__label {
-    /*display: flex;*/
-    /*flex-direction: column;*/
     flex-grow: 1;
 }
 
@@ -60,6 +58,34 @@
     margin-right: 2em;
 }
 
-.birthday {
-    max-width: 60%;
+.birthday .input__with__label__wrapper {
+    justify-content: flex-start;
+}
+
+.birthday .input__with__label {
+    max-width: 70px;
+}
+
+.birthday .input__with__label:last-child {
+    max-width: 100px;
+}
+
+#submit__lesson__form {
+    background-color: #31c8fd;
+    border: none;
+    box-shadow: none;
+    color: #fff;
+    cursor: pointer;
+    display: block;
+    font-size: 16px;
+    padding: 16px 24px;
+    width: auto;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 3px;
+}
+
+#submit__lesson__form:hover {
+    background-color: #b8dd42;
+    color: #fff;
 }

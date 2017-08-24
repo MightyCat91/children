@@ -473,29 +473,30 @@
 
 
 
-                                                                                        <section class="submit__free__lesson__form alltext">
+                                                                                        <form
+                                                                                                class="submit__free__lesson__form alltext" action="javascript:void(0);">
                                                                                             <h2 class="zagolovok_bigk">Запишитесь на бесплатное пробное занятие</h2>
 
                                                                                             <div class="form__group">
-                                                                                                <h4 class="input__header">Ваше имя</h4>
-                                                                                                <input id="textfield" name="textfield" type="text"
+                                                                                                <h4 class="input__header required">Ваше имя</h4>
+                                                                                                <input id="name" name="name" type="text"
                                                                                                        class="form__input" tabindex="1" required>
                                                                                             </div>
 
                                                                                             <div class="form__group">
-                                                                                                <h4 class="input__header">Телефон</h4>
+                                                                                                <h4 class="input__header required">Телефон</h4>
                                                                                                 <input id="phone" name="phone" type="tel" class="form__input"
                                                                                                        maxlength="254" tabindex="2" required>
                                                                                             </div>
 
                                                                                             <div class="form__group">
-                                                                                                <h4 class="input__header">Эл. адрес</h4>
+                                                                                                <h4 class="input__header required">Эл. адрес</h4>
                                                                                                 <input id="email" name="email" type="email" class="form__input"
                                                                                                        maxlength="254" tabindex="3" required>
                                                                                             </div>
 
                                                                                             <div class="form__group">
-                                                                                                <h4 class="input__header">Имя и Фамилия ребенка</h4>
+                                                                                                <h4 class="input__header required">Имя и Фамилия ребенка</h4>
                                                                                                 <div class="input__with__label__wrapper">
                                                                                                     <div class="input__with__label margin__right">
                                                                                                         <input id="child__name" name="child__name" type="text"
@@ -511,21 +512,25 @@
                                                                                             </div>
 
                                                                                             <div class="form__group birthday">
-                                                                                                <h4 class="input__header">Дата рождения</h4>
+                                                                                                <h4
+                                                                                                        class="input__header required">Дата рождения</h4>
                                                                                                 <div class="input__with__label__wrapper">
                                                                                                     <div class="input__with__label margin__right">
-                                                                                                        <input id="day" name="day" type="text" class="form__input"
-                                                                                                               maxlength="2" tabindex="6" required>
+                                                                                                        <input
+                                                                                                                id="day" name="day" type="text" class="form__input" title="Двузначное число"
+                                                                                                               pattern="[0-9]{2}" maxlength="2" tabindex="6" required>
                                                                                                         <div class="input__label">ДД</div>
                                                                                                     </div>
                                                                                                     <div class="input__with__label margin__right">
-                                                                                                        <input id="month" name="month" type="text" class="form__input"
-                                                                                                               maxlength="2" tabindex="7" required>
+                                                                                                        <input
+                                                                                                                id="month" name="month" type="text" class="form__input" title="Двузначное число"
+                                                                                                               pattern="[0-9]{2}" maxlength="2" tabindex="7" required>
                                                                                                         <div class="input__label">ММ</div>
                                                                                                     </div>
                                                                                                     <div class="input__with__label">
-                                                                                                        <input id="year" name="year" type="text" class="form__input"
-                                                                                                               maxlength="4" tabindex="8" required>
+                                                                                                        <input
+                                                                                                                id="year" name="year" type="text" class="form__input" title="Четырехзначное число"
+                                                                                                               pattern="[0-9]{4}" maxlength="4" tabindex="8" required>
                                                                                                         <div class="input__label">ГГГГ</div>
                                                                                                     </div>
                                                                                                 </div>
@@ -537,8 +542,9 @@
                                                                                                        tabindex="9">
                                                                                             </div>
 
-                                                                                            <button id="submit__lesson__form">Записаться</button>
-                                                                                        </section>
+                                                                                            <input
+                                                                                                    id="submit__lesson__form" value="Записаться" tabindex="10">
+                                                                                        </form>
 
 
                                                                                         <!--<p align="center"><span class="zagolovok_bigk">Для того, что  бы записаться на занятие, достаточно заполнить нижеприведённую форму, или позвонить нам по  телефону: <strong>8-985-110-32-85</strong></span>-->
