@@ -1,43 +1,68 @@
 <?php
-// Подключение мейлера
-require_once 'class.phpmailer.php';
+// РџРѕРґРєР»СЋС‡РµРЅРёРµ РјРµР№Р»РµСЂР°
+require 'PHPMailerAutoload.php';
 
-//Почта получателя
-$to = $_POST['email'];
-//Заголовок сообщения
-$subject = 'Заявка на бесплатное пробное занятие в "Детки Клуб - Творческий центр для всей семьи"';
-//Текст сообщения
-$message = '
-                <html>
+//РѕС‚ РєРѕРіРѕ Р°РґСЂРµСЃ
+const FROM = 'rp-detki@mail.ru',
+    //РѕС‚ РєРѕРіРѕ РёРјСЏ
+NAME = 'Р”РµС‚РєРё РљР»СѓР± - РўРІРѕСЂС‡РµСЃРєРёР№ С†РµРЅС‚СЂ РґР»СЏ РІСЃРµР№ СЃРµРјСЊРё',
+    //Р—Р°РіРѕР»РѕРІРѕРє СЃРѕРѕР±С‰РµРЅРёСЏ
+SUBJECT = 'Р—Р°СЏРІРєР° РЅР° Р±РµСЃРїР»Р°С‚РЅРѕРµ РїСЂРѕР±РЅРѕРµ Р·Р°РЅСЏС‚РёРµ РІ "Р”РµС‚РєРё РљР»СѓР± - РўРІРѕСЂС‡РµСЃРєРёР№ С†РµРЅС‚СЂ РґР»СЏ РІСЃРµР№ СЃРµРјСЊРё"';
+//РўРµРєСЃС‚ СЃРѕРѕР±С‰РµРЅРёСЏ
+$message = '<html>
                     <head>
-                        <title>' . $subject . '</title>
+                        <title>' . SUBJECT . '</title>
                     </head>
                     <body>
-                        <p>Спасибо за Вашу заявку</p>
-                        <p>Имя: ' . $_POST['name'] . '</p>
-                        <p>Телефон: ' . $_POST['phone'] . '</p>
-                        <p>Эл. адрес: ' . $_POST['email'] . '</p>
-                        <p>Имя ребенка: ' . $_POST['child__name'] . $_POST['child__surname'] . '</p>
-                        <p>Интересующий курс: ' . $_POST['subject'] . '</p>
+                        <p>РЎРїР°СЃРёР±Рѕ Р·Р° Р’Р°С€Сѓ Р·Р°СЏРІРєСѓ</p>
+                        <p>РРјСЏ: ' . $_POST['name'] . '</p>
+                        <p>РўРµР»РµС„РѕРЅ: ' . $_POST['phone'] . '</p>
+                        <p>Р­Р». Р°РґСЂРµСЃ: ' . $_POST['email'] . '</p>
+                        <p>РРјСЏ СЂРµР±РµРЅРєР°: ' . $_POST['children'] . '</p>
+                        <p>Р”Р°С‚Р° СЂРѕР¶РґРµРЅРёСЏ: ' . $_POST['birthday'] . '</p>
+                        <p>РРЅС‚РµСЂРµСЃСѓСЋС‰РёР№ РєСѓСЂСЃ: ' . $_POST['subject'] . '</p>
                     </body>
                 </html>';
 
-echo "<script>alert(".$message.")</script>";
 
+sentViaPhpMailer($message);
 
-$email = new PHPMailer();
+// РѕС‚РїСЂР°РІРєР° РїРёСЃСЊРјР° СЃ РёСЃРїРѕР»СЊР·РѕРІР°РЅРёРµРј Р±РёР±Р»РёРѕС‚РµРєРё PHPMailer
+function sentViaPhpMailer($message)
+{
+    $email = new PHPMailer;
 
-$email->FromName = 'Детки Клуб - Творческий центр для всей семьи';
-$email->CharSet = 'UTF-8';
-$email->Subject = $subject;
-$email->Body = $message;
+    $email->CharSet = 'UTF-8';
+    $email->setFrom(FROM, NAME);
+    $email->AddAddress($_POST['email'], $_POST['name']);
+    $email->Subject = SUBJECT;
+    $email->Body = $message;
+    $email->isHTML(true);
 
-// Добавление получателей
-$email->AddAddress($_POST['email']);
+// Р Р°СЃСЃС‹Р»РєР°
+    if($email->send()) {
+        $data = 'РќР° СѓРєР°Р·Р°РЅРЅС‹Р№ E-mail Р°РґСЂРµСЃ РѕС‚РїСЂР°РІР»РµРЅРѕ РїРёСЃСЊРјРѕ!';
 
-// Рассылка
-if (!$email->send()) {
-    echo json_encode($json['error'] = 1);
-} else {
-    echo json_encode($json['error'] = 0);
+    } else {
+        $data = 'Рљ СЃРѕР¶Р°Р»РµРЅРёСЋ, С‡С‚Рѕ-С‚Рѕ РїРѕС€Р»Рѕ РЅРµ С‚Р°Рє. РџРѕРїСЂРѕР±СѓР№С‚Рµ Р·Р°РїРёСЃР°С‚СЊСЃСЏ РїРѕР·Р¶Рµ!';
+    }
+}
+
+// РѕС‚РїСЂР°РІРєР° РїРёСЃСЊРјР° СЃС‚Р°РЅРґР°СЂС‚РЅС‹РјРё СЃСЂРµРґСЃС‚РІР°РјРё php
+function sentViaStandartMail($message)
+{
+
+    $headers = "MIME-Version: 1.0" . "\r\n";
+    $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+    $headers .= 'From: ' . NAME . ' <' . FROM . '>' . "\r\n";
+    $headers .= "Bcc: ". FROM . "\r\n";
+
+    $resutlt = mail($_POST['email'], SUBJECT, $message, $headers);
+    if($resutlt) {
+        $data = 'РќР° СѓРєР°Р·Р°РЅРЅС‹Р№ E-mail Р°РґСЂРµСЃ РѕС‚РїСЂР°РІР»РµРЅРѕ РїРёСЃСЊРјРѕ!';
+
+    } else {
+        $data = 'Рљ СЃРѕР¶Р°Р»РµРЅРёСЋ, С‡С‚Рѕ-С‚Рѕ РїРѕС€Р»Рѕ РЅРµ С‚Р°Рє. РџРѕРїСЂРѕР±СѓР№С‚Рµ Р·Р°РїРёСЃР°С‚СЊСЃСЏ РїРѕР·Р¶Рµ!';
+    }
+    echo $data;
 }

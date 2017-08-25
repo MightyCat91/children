@@ -1,23 +1,28 @@
 jQuery(function($){
     $("#phone").mask("+7 (999) 999-99-99");
 
-    $("#submit__lesson__form").on('click', function () {
+    $('.submit__free__lesson__form').on('submit', function (event) {
+        var formData = {
+            'name'     : $('input[name=name]').val(),
+            'email'    : $('input[name=email]').val(),
+            'phone'    : $('input[name=phone]').val(),
+            'children' : $('input[name=child__name]').val() + ' ' + $('input[name=child__surname]').val(),
+            'birthday' : $('input[name=day]').val() + '/' + $('input[name=month]').val() + '/' + $('input[name=year]').val(),
+            'subject'  : $('input[name=subject]').val()
+        };
         $.ajax({
             type: "POST",
             url: "mailer.php",
-            dataType: 'json', // oтвeт ждeм в json фoрмaтe
-            data: $('.submit__free__lesson__form').serialize(),
+            data: formData,
             success: function(data){
-                // eсли письмо отправлено
-                if (!data['error']) {
-                    // пoкaжeм сообщение
-                    $('#message').html('<span class="zagolovok_bigk">Ваша заявка отправлена!</span>');
-                }
+                console.log(data);
+                $('.submit__message').append(data);
             },
-            error: function (xhr, ajaxOptions, thrownError) { // в случae нeудaчнoгo зaвeршeния зaпрoсa к сeрвeру
-                alert(xhr.status); // пoкaжeм oтвeт сeрвeрa
-                alert(thrownError); // и тeкст oшибки
-            },
+            error: function (xhr, ajaxOptions, thrownError) {
+                alert(xhr.status);
+                alert(thrownError);
+            }
         });
+        event.preventDefault();
     })
 });

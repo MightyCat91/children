@@ -89,3 +89,8 @@
     background-color: #b8dd42;
     color: #fff;
 }
+
+.submit__message {
+    margin: 20px;
+    text-align: center;
+}
