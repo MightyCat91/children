@@ -1,0 +1,237 @@
+#age__selector li {
+    list-style: none;
+    padding: 10px 0;
+    cursor: pointer;
+}
+
+#selected__age {
+    padding: 15px;
+    width: 200px;
+    background-color: #96a6f7;
+    color: #fff;
+    font-weight: 600;
+    position: relative;
+}
+
+#selected__age:hover {
+    background-color: #4dcfff;
+}
+
+.selected__age__icon::after {
+    content: "˅";
+    float: right;
+    padding-right: 15px;
+}
+
+#selected__age:hover .selected__age__icon::after {
+    content: "˄";
+}
+
+.showed__age {
+    padding-left: 15px;
+    cursor: pointer;
+}
+
+.age__tabs {
+    padding: 7px 0;
+    margin-top: 10px;
+    position: absolute;
+    z-index: 10;
+    width: 100%;
+    background-color: #4dcfff;
+}
+
+.age__tabs.hidden {
+    display: none;
+}
+
+#selected__age .age__tabs li {
+    padding: 10px 20px;
+    margin: 0 8px;
+}
+
+.age__tabs li:not([class="selected"]) {
+    font-weight: 100;
+}
+
+.age__tabs li:hover {
+    background-color: #96a6f7;
+}
+
+.age__tabs a {
+    text-decoration: none;
+    color: #FFF;
+}
+
+#timetable__table__container {
+    color: #7e1679;
+}
+
+.timetable__table {
+    width: 100%;
+}
+
+.timetable__table th, .timetable__table td {
+    width: calc(100%/7);
+    text-align: center;
+    font-size: 14px;
+    position: relative;
+    cursor: default;
+}
+
+.cell__wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+
+.row__white {
+    background-color: #fff;
+}
+
+.event__container {
+    z-index: 1;
+    position: inherit;
+    flex-grow: 1;
+}
+
+.event__container.empty {
+    position: absolute;
+    top: 0;
+    z-index: 0;
+    height: 100%;
+    width: calc(100% - 2px);
+}
+
+.event__container.hovered__event {
+    z-index: 2;
+    padding: 3px 0 1px;
+    margin-top: -3px;
+}
+
+.subject__name {
+    padding-top: 5px;
+}
+
+.hidden {
+    display: none;
+}
+
+.fullHeight {
+    height: 100%;
+}
+
+div[data-subject="mini-sad"] {
+    background-color: #d7ffd7;
+}
+
+div[data-subject="mother-fitness"] {
+    background-color: #f2d7ff;
+}
+
+div[data-subject="mother-yoga"] {
+    background-color: #ffc079;
+}
+
+div[data-subject="earlier-development-1.5"] {
+    background-color: #ffffbf;
+}
+
+div[data-subject="logaritmika"] {
+    background-color: #b8dd42;
+}
+
+div[data-subject="classic-horeography"] {
+    background-color: #91a6f3;
+}
+
+div[data-subject="earlier-development-3"] {
+    background-color: #71f3b7;
+}
+
+div[data-subject="english-3"] {
+    background-color: #f392df;
+}
+
+div[data-subject="logaritmika-3"] {
+    background-color: #f39a97;
+}
+
+div[data-subject="child-fitness"] {
+    background-color: #80bcf3;
+}
+
+div[data-subject="sand-therapy"] {
+    background-color: #6cf382;
+}
+
+div[data-subject="earlier-development-4"] {
+    background-color: #c6f386;
+}
+
+div[data-subject="music"] {
+    background-color: #f3dba5;
+}
+
+div[data-subject="logaritmika-4"] {
+    background-color: #d7b5f3;
+}
+
+div[data-subject="man-fitness"] {
+    background-color: #f3a3d5;
+}
+
+div[data-subject="mother-horeography"] {
+    background-color: #86f375;
+}
+
+div[data-subject="english-7"] {
+    background-color: #f3c659;
+}
+
+div[data-subject="classic-horeography-4group"] {
+    background-color: #59c4f3;
+}
+
+div[data-subject="classic-horeography-1group"] {
+    background-color: #f398b2;
+}
+
+div[data-subject="schooll-preparation"] {
+    background-color: #7cf391;
+}
+
+div[data-subject="classic-horeography-2group"] {
+    background-color: #b9daf3;
+}
+
+div[data-subject="acting-skills"] {
+    background-color: #f3c8a9;
+}
+
+div[data-subject="english-9"] {
+    background-color: #f38ccc;
+}
+
+div[data-subject="schooll-preparation-6"] {
+    background-color: #01f39e;
+}
+
+div[data-subject="etiket"] {
+    background-color: #f2f300;
+}
+
+div[data-subject="history-art"] {
+    background-color: #f39900;
+}
+
+@media screen and (max-width: 678px) {
+    .small__table__wrapper {
+        display: block;
+    }
+
+    .table__wrapper {
+        display: none;
+    }
+}

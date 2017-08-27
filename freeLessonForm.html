@@ -8,11 +8,11 @@
     <META NAME="revizit-after" CONTENT="15 days">
     <META NAME="ROBOTS" content="ALL">
     <link href="style.css" rel="stylesheet" type="text/css" />
-    <link href="freeLessonForm.css" rel="stylesheet" type="text/css" />
+    <link href="timetable.css" rel="stylesheet" type="text/css" />
     <script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
     <script src="s.js" ></script>
     <script src="jquery.maskedinput.min.js" type="text/javascript"></script>
-    <script src="freeLessonForm.js" type="text/javascript"></script>
+    <script src="timetable.js" type="text/javascript"></script>
 
 </head>
 <body bgcolor="#b1e5fb" >
@@ -468,10 +468,9 @@
 <section class="timetable">
     <ul id="age__selector">
         <li id="selected__age">
-            <label class="showed__age"></label>
-            <span class="selected__age__icon"></span>
-            <ul class="age__tabs">
-                <li>
+            <span class="showed__age">Возраст ребенка</span><span class="selected__age__icon"></span>
+            <ul class="age__tabs hidden">
+                <li class="selected">
                     <a href="#all__ages" title="Возраст ребенка">Возраст ребенка</a>
                 </li>
                 <li>
@@ -508,33 +507,666 @@
         </li>
     </ul>
 
-    <div id="timetable__table">
-        <div id="1-1_5" class="tt-ui-tabs-hide ui-tabs-panel ui-widget-content ui-corner-bottom" aria-labelledby="ui-id-2" role="tabpanel" aria-hidden="true" style="display: none;"><table class="tt_timetable">
-            <thead>
-            <tr class="row_gray" style="background-color: #F0F0F0 !important;"><th></th>	<th>Понедельник</th>	<th>Вторник</th>	<th>Среда</th>	<th>Четверг</th>	<th>Пятница</th>	<th>Суббота</th>	</tr>
-            </thead>
-            <tbody><tr class="row_1"><td class="tt_hours_column">
-                10.00
-            </td><td></td><td style="background: rgb(91, 204, 212);" onmouseover="this.style.background='#19a8a1';" onmouseout="this.style.background='#5bccd4';" class="event tt_single_event"><div class="event_container id-994"><a class="event_header" href="http://www.ugolok-club.ru/kompleksnoe-razvitie-3-2/" title="Раннее развитие 1-2 года">Раннее развитие 1-2 года</a><div class="before_hour_text">2 р/н вт, чт</div><div class="top_hour"><span class="hours">10.00</span></div><div class="bottom_hour"><span class="hours">10.50</span></div><div class="after_hour_text">6200 р/мес</div></div></td><td></td><td style="background: rgb(91, 204, 212);" onmouseover="this.style.background='#19a8a1';" onmouseout="this.style.background='#5bccd4';" class="event tt_single_event"><div class="event_container id-994"><a class="event_header" href="http://www.ugolok-club.ru/kompleksnoe-razvitie-3-2/" title="Раннее развитие 1-2 года">Раннее развитие 1-2 года</a><div class="before_hour_text">вт, чт (2 р/н)</div><div class="top_hour"><span class="hours">10.00</span></div><div class="bottom_hour"><span class="hours">10.50</span></div><div class="after_hour_text">6200 р/мес</div></div></td><td></td><td style="background: rgb(91, 204, 212);" onmouseover="this.style.background='#19a8a1';" onmouseout="this.style.background='#5bccd4';" class="event tt_single_event"><div class="event_container id-994"><a class="event_header" href="http://www.ugolok-club.ru/kompleksnoe-razvitie-3-2/" title="Раннее развитие 1-2 года">Раннее развитие 1-2 года</a><div class="before_hour_text">1 р/н</div><div class="top_hour"><span class="hours">10.00</span></div><div class="bottom_hour"><span class="hours">10.50</span></div><div class="after_hour_text">3200 р/мес</div></div></td></tr></tbody>
-        </table><div class="tt_timetable small"><h3 class="box_header">
-            Вторник
-        </h3>
-            <ul class="tt_items_list thin page_margin_top timetable_clearfix"><li class="timetable_clearfix"><a href="http://www.ugolok-club.ru/kompleksnoe-razvitie-3-2/" title="Раннее развитие 1-2 года">Раннее развитие 1-2 года</a><div class="value">
-                10.00 - 10.50
-            </div>
-            </li></ul><h3 class="box_header page_margin_top">
-                Четверг
-            </h3>
-            <ul class="tt_items_list thin page_margin_top timetable_clearfix"><li class="timetable_clearfix"><a href="http://www.ugolok-club.ru/kompleksnoe-razvitie-3-2/" title="Раннее развитие 1-2 года">Раннее развитие 1-2 года</a><div class="value">
-                10.00 - 10.50
-            </div>
-            </li></ul><h3 class="box_header page_margin_top">
-                Суббота
-            </h3>
-            <ul class="tt_items_list thin page_margin_top timetable_clearfix"><li class="timetable_clearfix"><a href="http://www.ugolok-club.ru/kompleksnoe-razvitie-3-2/" title="Раннее развитие 1-2 года">Раннее развитие 1-2 года</a><div class="value">
-                10.00 - 10.50
-            </div>
-            </li></ul></div></div>
+    <div id="timetable__table__container">
+        <div id="1-1.5" class="table__wrapper">
+            <table class="timetable__table">
+                <thead>
+                    <tr class="row__white">
+                        <th></th>
+                        <th>Понедельник</th>
+                        <th>Вторник</th>
+                        <th>Среда</th>
+                        <th>Четверг</th>
+                        <th>Пятница</th>
+                        <th>Суббота</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="row__1">
+                        <td class="hours__column">09.00</td>
+                        <td >
+                            <div class="cell__wrapper">
+                            <div class="event__container" data-subject="mini-sad" data-day="monday">
+                                <div class="subject__name">Мини-сад</div>
+                                <div class="subject__hours">
+                                    <div class="hours__start">09.00</div>
+                                    <div class="hours__end">13.00</div>
+                                </div>
+                            </div>
+                            <div class="event__container" data-subject="mother-fitness" data-day="monday">
+                                <div class="subject__name">Фитнес (TOTAL Sculpt+Stretching) для мам</div>
+                                <div class="subject__hours">
+                                    <div class="hours__start">09.00</div>
+                                    <div class="hours__end">10.15</div>
+                                </div>
+                            </div>
+                            </div>
+                        </td>
+                        <td >
+                            <div class="cell__wrapper">
+                            <div class="event__container" data-subject="mini-sad" data-day="tuesday">
+                                <div class="subject__name">Мини-сад</div>
+                                <div class="subject__hours">
+                                    <div class="hours__start">09.00</div>
+                                    <div class="hours__end">13.00</div>
+                                </div>
+                            </div>
+                            </div>
+                        </td>
+                        <td >
+                            <div class="cell__wrapper">
+                                <div class="event__container" data-subject="mini-sad" data-day="wednesday">
+                                    <div class="subject__name">Мини-сад</div>
+                                    <div class="subject__hours">
+                                        <div class="hours__start">09.00</div>
+                                        <div class="hours__end">13.00</div>
+                                    </div>
+                                </div>
+                                <div class="event__container" data-subject="mother-yoga" data-day="wednesday">
+                                    <div class="subject__name">Йога для мам</div>
+                                    <div class="subject__hours">
+                                        <div class="hours__start">09.00</div>
+                                        <div class="hours__end">10.30</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                        <td >
+                            <div class="cell__wrapper">
+                            <div class="event__container" data-subject="mini-sad" data-day="thursday">
+                                <div class="subject__name">Мини-сад</div>
+                                <div class="subject__hours">
+                                    <div class="hours__start">09.00</div>
+                                    <div class="hours__end">13.00</div>
+                                </div>
+                            </div>
+                            </div>
+                        </td>
+                        <td >
+                            <div class="cell__wrapper">
+                            <div class="event__container" data-subject="mini-sad" data-day="friday">
+                                <div class="subject__name">Мини-сад</div>
+                                <div class="subject__hours">
+                                    <div class="hours__start">09.00</div>
+                                    <div class="hours__end">13.00</div>
+                                </div>
+                            </div>
+                            <div class="event__container" data-subject="mother-fitness" data-day="friday">
+                                <div class="subject__name">Фитнес (TOTAL Sculpt+Stretching) для мам</div>
+                                <div class="subject__hours">
+                                    <div class="hours__start">09.00</div>
+                                    <div class="hours__end">10.15</div>
+                                </div>
+                            </div>
+                            </div>
+                        </td>
+                        <td >
+                            <div class="cell__wrapper">
+                            <div class="event__container"  data-subject="mini-sad" data-day="saturday">
+                                <div class="subject__name">Мини-сад</div>
+                                <div class="subject__hours">
+                                    <div class="hours__start">09.00</div>
+                                    <div class="hours__end">13.00</div>
+                                </div>
+                            </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="row__2 row__white">
+                        <td class="hours__column">10.00</td>
+                        <td >
+                            <div class="cell__wrapper">
+                                <div class="event__container" data-subject="earlier-development-1.5" data-day="monday">
+                                    <div class="subject__name">Ранее развитие 1.5 - 2 года</div>
+                                    <div class="subject__hours">
+                                        <div class="hours__start">10.00</div>
+                                        <div class="hours__end">11.00</div>
+                                    </div>
+                                </div>
+                                <div class="event__container empty" data-subject="mother-fitness" data-day="monday"></div>
+                                <div class="event__container empty" data-subject="mini-sad" data-day="monday"></div>
+                            </div>
+                        </td>
+                        <td >
+                            <div class="cell__wrapper">
+                                <div class="event__container" data-subject="logaritmika" data-day="tuesday">
+                                    <div class="subject__name">Логаритмика 1.5 - 2 года</div>
+                                    <div class="subject__hours">
+                                        <div class="hours__start">10.00</div>
+                                        <div class="hours__end">11.00</div>
+                                    </div>
+                                </div>
+                                <div class="event__container empty" data-subject="mother-fitness" data-day="tuesday"></div>
+                                <div class="event__container empty" data-subject="mini-sad" data-day="tuesday"></div>
+                            </div>
+                        </td>
+                        <td >
+                            <div class="event__container empty" data-subject="mother-yoga" data-day="wednesday"></div>
+                            <div class="event__container empty" data-subject="mini-sad" data-day="wednesday"></div>
+                        </td>
+                        <td >
+                            <div class="cell__wrapper">
+                                <div class="event__container" data-subject="logaritmika" data-day="thursday">
+                                    <div class="subject__name">Логаритмика 1.5 - 2 года</div>
+                                    <div class="subject__hours">
+                                        <div class="hours__start">10.00</div>
+                                        <div class="hours__end">11.00</div>
+                                    </div>
+                                </div>
+                                <div class="event__container empty" data-subject="mini-sad" data-day="thursday"></div>
+                            </div>
+                        </td>
+                        <td >
+                            <div class="cell__wrapper">
+                                <div class="event__container" data-subject="earlier-development-1.5" data-day="friday">
+                                    <div class="subject__name">Ранее развитие 1.5 - 2 года</div>
+                                    <div class="subject__hours">
+                                        <div class="hours__start">10.00</div>
+                                        <div class="hours__end">11.00</div>
+                                    </div>
+                                </div>
+                                <div class="event__container empty" data-subject="mother-fitness" data-day="friday"></div>
+                                <div class="event__container empty" data-subject="mini-sad" data-day="friday"></div>
+                            </div>
+                        </td>
+                        <td >
+                            <div class="cell__wrapper">
+                                <div class="event__container" data-subject="classic-horeography" data-day="saturday">
+                                    <div class="subject__name">Классическая хореография, балет(растяжка, партерная гимнастика)</div>
+                                    <div class="subject__hours">
+                                        <div class="hours__start">10.00</div>
+                                        <div class="hours__end">11.30</div>
+                                    </div>
+                                </div>
+                                <div class="event__container empty" data-subject="mini-sad" data-day="saturday"></div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="row__3">
+                        <td>11.00</td>
+                        <td>
+                            <div class="cell__wrapper">
+                                <div class="event__container" data-subject="earlier-development-3" data-day="monday">
+                                    <div class="subject__name">Ранее развитие 2 - 3 года</div>
+                                    <div class="subject__hours">
+                                        <div class="hours__start">11.00</div>
+                                        <div class="hours__end">12.00</div>
+                                    </div>
+                                </div>
+                                <div class="event__container" data-subject="english-3" data-day="monday">
+                                    <div class="subject__name">Английский 3 - 5 лет</div>
+                                    <div class="subject__hours">
+                                        <div class="hours__start">11.00</div>
+                                        <div class="hours__end">12.00</div>
+                                    </div>
+                                </div>
+                                <div class="event__container empty" data-subject="mini-sad" data-day="monday"></div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="cell__wrapper">
+                                <div class="event__container" data-subject="logaritmika-3" data-day="tuesday">
+                                    <div class="subject__name">Логаритмика 2 - 3 года</div>
+                                    <div class="subject__hours">
+                                        <div class="hours__start">11.00</div>
+                                        <div class="hours__end">12.00</div>
+                                    </div>
+                                </div>
+                                <div class="event__container empty" data-subject="mini-sad" data-day="tuesday"></div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="cell__wrapper">
+                                <div class="event__container" data-subject="child-fitness" data-day="wednesday">
+                                    <div class="subject__name">Детский фитнес 3 - 5 лет</div>
+                                    <div class="subject__hours">
+                                        <div class="hours__start">11.00</div>
+                                        <div class="hours__end">12.00</div>
+                                    </div>
+                                </div>
+                                <div class="event__container" data-subject="sand-therapy" data-day="wednesday">
+                                    <div class="subject__name">Песочная терапия 2 - 5 лет</div>
+                                    <div class="subject__hours">
+                                        <div class="hours__start">11.00</div>
+                                        <div class="hours__end">13.00</div>
+                                    </div>
+                                </div>
+                                <div class="event__container empty" data-subject="mini-sad" data-day="wednesday"></div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="cell__wrapper">
+                                <div class="event__container" data-subject="logaritmika-3" data-day="thursday">
+                                    <div class="subject__name">Логаритмика 2 - 3 года</div>
+                                    <div class="subject__hours">
+                                        <div class="hours__start">11.00</div>
+                                        <div class="hours__end">12.00</div>
+                                    </div>
+                                </div>
+                                <div class="event__container empty" data-subject="mini-sad" data-day="thursday"></div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="cell__wrapper">
+                                <div class="event__container" data-subject="earlier-development-3" data-day="friday">
+                                    <div class="subject__name">Ранее развитие 2 - 3 года</div>
+                                    <div class="subject__hours">
+                                        <div class="hours__start">11.00</div>
+                                        <div class="hours__end">12.00</div>
+                                    </div>
+                                </div>
+                                <div class="event__container" data-subject="english-3" data-day="friday">
+                                    <div class="subject__name">Английский 3 - 5 лет</div>
+                                    <div class="subject__hours">
+                                        <div class="hours__start">11.00</div>
+                                        <div class="hours__end">12.00</div>
+                                    </div>
+                                </div>
+                                <div class="event__container empty" data-subject="mini-sad" data-day="friday"></div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="cell__wrapper">
+                                <div class="event__container empty" data-subject="classic-horeography"
+                                     data-day="saturday"></div>
+                                <div class="event__container empty" data-subject="mini-sad" data-day="saturday"></div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="row__4 row__white">
+                        <td>12.00</td>
+                        <td>
+                            <div class="cell__wrapper">
+                                <div class="event__container" data-subject="earlier-development-4" data-day="monday">
+                                    <div class="subject__name">Ранее развитие 3 - 4 года</div>
+                                    <div class="subject__hours">
+                                        <div class="hours__start">12.00</div>
+                                        <div class="hours__end">13.00</div>
+                                    </div>
+                                </div>
+                                <div class="event__container" data-subject="music" data-day="monday">
+                                    <div class="subject__name">Основы музыкальной грамоты 3 - 5 лет</div>
+                                    <div class="subject__hours">
+                                        <div class="hours__start">12.00</div>
+                                        <div class="hours__end">13.00</div>
+                                    </div>
+                                </div>
+                                <div class="event__container empty" data-subject="mini-sad" data-day="monday"></div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="cell__wrapper">
+                                <div class="event__container" data-subject="logaritmika-4" data-day="tuesday">
+                                    <div class="subject__name">Логаритмика 3 - 4 года</div>
+                                    <div class="subject__hours">
+                                        <div class="hours__start">12.00</div>
+                                        <div class="hours__end">13.00</div>
+                                    </div>
+                                </div>
+                                <div class="event__container empty" data-subject="mini-sad" data-day="tuesday"></div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="event__container empty" data-subject="sand-therapy" data-day="wednesday"></div>
+                            <div class="event__container empty" data-subject="mini-sad" data-day="wednesday"></div>
+                        </td>
+                        <td>
+                            <div class="cell__wrapper">
+                                <div class="event__container" data-subject="logaritmika-4" data-day="thursday">
+                                    <div class="subject__name">Логаритмика 3 - 4 года</div>
+                                    <div class="subject__hours">
+                                        <div class="hours__start">12.00</div>
+                                        <div class="hours__end">13.00</div>
+                                    </div>
+                                </div>
+                                <div class="event__container empty" data-subject="mini-sad" data-day="thursday"></div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="cell__wrapper">
+                                <div class="event__container" data-subject="earlier-development-4" data-day="friday">
+                                    <div class="subject__name">Ранее развитие 3 - 4 года</div>
+                                    <div class="subject__hours">
+                                        <div class="hours__start">12.00</div>
+                                        <div class="hours__end">13.00</div>
+                                    </div>
+                                </div>
+                                <div class="event__container" data-subject="music" data-day="friday">
+                                    <div class="subject__name">Основы музыкальной грамоты 3 - 5 лет</div>
+                                    <div class="subject__hours">
+                                        <div class="hours__start">12.00</div>
+                                        <div class="hours__end">13.00</div>
+                                    </div>
+                                </div>
+                                <div class="event__container empty" data-subject="mini-sad" data-day="friday"></div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="cell__wrapper">
+                                <div class="event__container" data-subject="man-fitness" data-day="saturday">
+                                    <div class="subject__name">Танцевальный фитнес для мальчиков</div>
+                                    <div class="subject__hours">
+                                        <div class="hours__start">12.00</div>
+                                        <div class="hours__end">13.00</div>
+                                    </div>
+                                </div>
+                                <div class="event__container empty" data-subject="mini-sad" data-day="saturday"></div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="row__5">
+                        <td>13.00</td>
+                        <td>
+
+                        </td>
+                        <td>
+
+                        </td>
+                        <td>
+
+                        </td>
+                        <td>
+
+                        </td>
+                        <td>
+
+                        </td>
+                        <td>
+
+                        </td>
+                    </tr>
+                    <tr class="row__6 row__white">
+                        <td>14.00</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr class="row__7">
+                        <td>15.00</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr class="row__8 row__white">
+                        <td>16.00</td>
+                        <td></td>
+                        <td>
+                            <div class="cell__wrapper">
+                                <div class="event__container" data-subject="mother-horeography" data-day="tuesday">
+                                    <div class="subject__name">Хореография для мам</div>
+                                    <div class="subject__hours">
+                                        <div class="hours__start">12.00</div>
+                                        <div class="hours__end">13.00</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                        <td></td>
+                        <td>
+                            <div class="cell__wrapper">
+                                <div class="event__container" data-subject="mother-horeography" data-day="thursday">
+                                    <div class="subject__name">Хореография для мам</div>
+                                    <div class="subject__hours">
+                                        <div class="hours__start">12.00</div>
+                                        <div class="hours__end">13.00</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr class="row__9">
+                        <td>17.00</td>
+                        <td>
+                            <div class="cell__wrapper">
+                                <div class="event__container" data-subject="english-7" data-day="monday">
+                                    <div class="subject__name">Английский язык 5-7 лет</div>
+                                    <div class="subject__hours">
+                                        <div class="hours__start">17.00</div>
+                                        <div class="hours__end">18.00</div>
+                                    </div>
+                                </div>
+                                <div class="event__container" data-subject="classic-horeography-4group" data-day="monday">
+                                    <div class="subject__name">Классическая хореография, балет(4 ступень младшая группа)</div>
+                                    <div class="subject__hours">
+                                        <div class="hours__start">17.00</div>
+                                        <div class="hours__end">18.30</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="cell__wrapper">
+                                <div class="event__container" data-subject="classic-horeography-1group"
+                                     data-day="tuesday">
+                                    <div class="subject__name">Классическая хореография, балет(1 ступень обучения)</div>
+                                    <div class="subject__hours">
+                                        <div class="hours__start">17.00</div>
+                                        <div class="hours__end">17.45</div>
+                                    </div>
+                                </div>
+                                <div class="event__container" data-subject="schooll-preparation"
+                                     data-day="tuesday">
+                                    <div class="subject__name">Учиться интересно (подготовка к школе) 4-5 лет</div>
+                                    <div class="subject__hours">
+                                        <div class="hours__start">17.00</div>
+                                        <div class="hours__end">18.00</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="cell__wrapper">
+                                <div class="event__container" data-subject="english-7" data-day="wednesday">
+                                    <div class="subject__name">В гостях у сказки 3-5 лет</div>
+                                    <div class="subject__hours">
+                                        <div class="hours__start">17.00</div>
+                                        <div class="hours__end">18.00</div>
+                                    </div>
+                                </div>
+                                <div class="event__container" data-subject="classic-horeography-4group"
+                                     data-day="wednesday">
+                                    <div class="subject__name">Классическая хореография, балет(4 ступень младшая группа)</div>
+                                    <div class="subject__hours">
+                                        <div class="hours__start">17.00</div>
+                                        <div class="hours__end">18.30</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="cell__wrapper">
+                                <div class="event__container" data-subject="classic-horeography-1group"
+                                     data-day="thursday">
+                                    <div class="subject__name">Классическая хореография, балет(1 ступень обучения)</div>
+                                    <div class="subject__hours">
+                                        <div class="hours__start">17.00</div>
+                                        <div class="hours__end">17.45</div>
+                                    </div>
+                                </div>
+                                <div class="event__container" data-subject="schooll-preparation"
+                                     data-day="thursday">
+                                    <div class="subject__name">Учиться интересно (подготовка к школе) 4-5 лет</div>
+                                    <div class="subject__hours">
+                                        <div class="hours__start">17.00</div>
+                                        <div class="hours__end">18.00</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="cell__wrapper">
+                                <div class="event__container" data-subject="english-7" data-day="friday">
+                                    <div class="subject__name">Английский язык 5-7 лет</div>
+                                    <div class="subject__hours">
+                                        <div class="hours__start">17.00</div>
+                                        <div class="hours__end">18.00</div>
+                                    </div>
+                                </div>
+                                <div class="event__container" data-subject="classic-horeography-4group"
+                                     data-day="friday">
+                                    <div class="subject__name">Классическая хореография, балет(4 ступень младшая группа)</div>
+                                    <div class="subject__hours">
+                                        <div class="hours__start">17.00</div>
+                                        <div class="hours__end">18.30</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr class="row__10 row__white">
+                        <td>18.00</td>
+                        <td>
+                            <div class="cell__wrapper">
+                                <div class="event__container" data-subject="english-9" data-day="monday">
+                                    <div class="subject__name">Английский язык 7-9 лет</div>
+                                    <div class="subject__hours">
+                                        <div class="hours__start">18.00</div>
+                                        <div class="hours__end">19.00</div>
+                                    </div>
+                                </div>
+                                <div class="event__container empty" data-subject="classic-horeography-4group"
+                                     data-day="monday"></div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="cell__wrapper">
+                                <div class="event__container" data-subject="classic-horeography-2group"
+                                     data-day="tuesday">
+                                    <div class="subject__name">Классическая хореография, балет(2 ступень обучения)</div>
+                                    <div class="subject__hours">
+                                        <div class="hours__start">18.00</div>
+                                        <div class="hours__end">18.45</div>
+                                    </div>
+                                </div>
+                                <div class="event__container" data-subject="acting-skills"
+                                     data-day="tuesday">
+                                    <div class="subject__name">Актерское мастерство 6-8 лет</div>
+                                    <div class="subject__hours">
+                                        <div class="hours__start">18.00</div>
+                                        <div class="hours__end">19.00</div>
+                                    </div>
+                                </div>
+                                <div class="event__container" data-subject="schooll-preparation-6"
+                                     data-day="tuesday">
+                                    <div class="subject__name">Учиться интересно (подготовка к школе) 5-6 лет</div>
+                                    <div class="subject__hours">
+                                        <div class="hours__start">18.00</div>
+                                        <div class="hours__end">19.00</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="cell__wrapper">
+                                <div class="event__container" data-subject="history-art" data-day="wednesday">
+                                    <div class="subject__name">История живописи 5-7 лет</div>
+                                    <div class="subject__hours">
+                                        <div class="hours__start">18.00</div>
+                                        <div class="hours__end">19.00</div>
+                                    </div>
+                                </div>
+                                <div class="event__container empty" data-subject="classic-horeography-4group"
+                                     data-day="wednesday"></div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="cell__wrapper">
+                                <div class="event__container" data-subject="classic-horeography-2group"
+                                     data-day="thursday">
+                                    <div class="subject__name">Классическая хореография, балет(2 ступень обучения)</div>
+                                    <div class="subject__hours">
+                                        <div class="hours__start">18.00</div>
+                                        <div class="hours__end">18.45</div>
+                                    </div>
+                                </div>
+                                <div class="event__container" data-subject="acting-skills"
+                                     data-day="thursday">
+                                    <div class="subject__name">Актерское мастерство 6-8 лет</div>
+                                    <div class="subject__hours">
+                                        <div class="hours__start">18.00</div>
+                                        <div class="hours__end">19.00</div>
+                                    </div>
+                                </div>
+                                <div class="event__container" data-subject="schooll-preparation-6"
+                                     data-day="thursday">
+                                    <div class="subject__name">Учиться интересно (подготовка к школе) 5-6 лет</div>
+                                    <div class="subject__hours">
+                                        <div class="hours__start">18.00</div>
+                                        <div class="hours__end">19.00</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="cell__wrapper">
+                                <div class="event__container" data-subject="english-9" data-day="friday">
+                                    <div class="subject__name">Английский язык 7-9 лет</div>
+                                    <div class="subject__hours">
+                                        <div class="hours__start">18.00</div>
+                                        <div class="hours__end">19.00</div>
+                                    </div>
+                                </div>
+                                <div class="event__container" data-subject="etiket" data-day="friday">
+                                    <div class="subject__name">Школа этикета 4-7 лет</div>
+                                    <div class="subject__hours">
+                                        <div class="hours__start">18.00</div>
+                                        <div class="hours__end">19.00</div>
+                                    </div>
+                                </div>
+                                <div class="event__container empty" data-subject="classic-horeography-4group"
+                                     data-day="friday"></div>
+                            </div>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr class="row__11">
+                        <td>19.00</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        <div class="small__table__wrapper">
+            <h3 class="small__table__day">Вторник</h3>
+            <ul class="small__table__day__subjects">
+                <li class="small__table__subject__wrapper">
+                    <div class="small__subject__name">Раннее развитие 1-2 года</div>
+                    <div class="small__subject__hours">10.00 - 10.50</div>
+                </li>
+            </ul>
+            <h3 class="small__table__day">Четверг</h3>
+            <ul class="small__table__day__subjects">
+                <li class="small__table__subject__wrapper">
+                    <div class="small__subject__name">Раннее развитие 1-2 года</div>
+                    <div class="small__subject__hours">10.00 - 10.50</div>
+                </li>
+            </ul>
+            <h3 class="small__table__day">Суббота</h3>
+            <ul class="small__table__day__subjects">
+                <li class="small__table__subject__wrapper">
+                    <div class="small__subject__name">Раннее развитие 1-2 года</div>
+                    <div class="small__subject__hours">10.00 - 10.50</div>
+                </li>
+                <li class="small__table__subject__wrapper">
+                    <div class="small__subject__name">Раннее развитие 1-2 года</div>
+                    <div class="small__subject__hours">10.00 - 10.50</div>
+                </li>
+            </ul>
+        </div>
+        </div>
     </div>
 </section>
 
