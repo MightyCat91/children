@@ -1,3 +1,7 @@
+.small__table__wrapper {
+    display: none;
+}
+
 #age__selector li {
     list-style: none;
     padding: 10px 0;
@@ -82,8 +86,8 @@
 .cell__wrapper {
     display: flex;
     flex-direction: column;
-    width: 100%;
-    height: 100%;
+    width: calc(100% + 2px);
+    height: calc(100% + 2px);
 }
 
 .row__white {
@@ -101,13 +105,13 @@
     top: 0;
     z-index: 0;
     height: 100%;
-    width: calc(100% - 2px);
+    width: 100%;
 }
 
 .event__container.hovered__event {
     z-index: 2;
-    padding: 3px 0 1px;
-    margin-top: -3px;
+    padding: 1px 0px;
+    margin-top: -2px;
 }
 
 .subject__name {
@@ -226,12 +230,32 @@ div[data-subject="history-art"] {
     background-color: #f39900;
 }
 
+div[data-subject="classic-horeography-4group-old"] {
+    background-color: #f3c4dc;
+}
+
+div[data-subject="mother-horeography-evening"] {
+    background-color: #b6a6f3;
+}
+
+div[data-subject="classic-horeography-3group"] {
+    background-color: #83d2f3;
+}
+
+div[data-subject="acting-skills-6"] {
+    background-color: #81f3b4;
+}
+
+div[data-subject="schooll-preparation-7"] {
+    background-color: #f0f36f;
+}
+
 @media screen and (max-width: 678px) {
     .small__table__wrapper {
         display: block;
     }
 
-    .table__wrapper {
+    .timetable__table {
         display: none;
     }
 }
