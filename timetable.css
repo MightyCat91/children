@@ -119,7 +119,7 @@
 }
 
 .hidden {
-    display: none;
+    display: none !important;
 }
 
 .fullHeight {
@@ -258,4 +258,30 @@ div[data-subject="schooll-preparation-7"] {
     .timetable__table {
         display: none;
     }
+
+    .small__table__day {
+        margin-top: 60px;
+    }
+
+    .small__table__day__subjects {
+        padding: 0;
+    }
+
+    .small__table__subject__wrapper {
+        list-style: none;
+        display: flex;
+        justify-content: space-between;
+        padding: .5em 1em;
+        border-bottom: 1px solid #fff;
+        font-size: 14px;
+        cursor: default;
+    }
+
+    .small__table__subject__wrapper:hover {
+        background-color: #b5e7fe;
+    }
+
+    /*.small__table__subject__wrapper:first-child {*/
+        /*display: none;*/
+    /*}*/
 }

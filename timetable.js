@@ -44,17 +44,29 @@ jQuery(function ($) {
     );
 
     if($(window).width() <= 678) {
+        generateMobileTable();
+    }
+
+    $(window).resize(function () {
+        if($(window).width() <= 678) {
+            generateMobileTable();
+        }
+    });
+
+    function generateMobileTable () {
         $.each(days, function (index, value) {
-            eventCotainer.filter('[data-day=' + value + ']').map(function (indx, element) {
+            var dayContainer = $('.small__table__day__subjects.' + value);
+            dayContainer.children(':not(.hidden)').remove();
+            eventCotainer.filter(':not(.empty)[data-day=' + value + ']').map(function (indx, element) {
                 var subjectName = $(element).find('.subject__name').text(),
                     subjectTime = $(element).find('.hours__start').text() + ' - ' + $(element).find('.hours__end').text(),
-                    dayContainer = $('.small__table__day__subjects.' + value),
-                    newSubject = dayContainer.find('.small__table__subject__wrapper:first-child').clone();
+                    newSubject = dayContainer.find('.small__table__subject__wrapper:first-child').clone().removeClass('hidden');
 
                 newSubject.find('.small__subject__name').text(subjectName);
                 newSubject.find('.small__subject__hours').text(subjectTime);
-                dayContainer.append(newSubject.html());
+                dayContainer.append(newSubject[0].outerHTML);
             });
         });
     }
+
 });
