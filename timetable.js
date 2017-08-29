@@ -69,4 +69,9 @@ jQuery(function ($) {
         });
     }
 
+
+    $('[data-tab]').on('click', function () {
+        $(this).addClass('active').siblings('[data-tab]').removeClass('active');
+        $(this).siblings('[data-content=' + $(this).data('tab') + ']').addClass('active').siblings('[data-content]').removeClass('active')
+    })
 });

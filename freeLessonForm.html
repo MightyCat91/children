@@ -471,44 +471,29 @@
             <span class="showed__age">Возраст ребенка</span><span class="selected__age__icon"></span>
             <ul class="age__tabs hidden">
                 <li class="selected">
-                    <a href="#all__ages" title="Возраст ребенка">Возраст ребенка</a>
+                    <a href="#" data-tab="all__ages" title="Возраст ребенка">Возраст ребенка</a>
                 </li>
                 <li>
-                    <a href="#1__1.5" title="1-1.5 года">1-1.5 года</a>
+                    <a href="#" data-tab="1__3" title="1-3 года">1-3 года</a>
                 </li>
                 <li>
-                    <a href="#1.5__2" title="1.5-2 года">1.5-2 года</a>
+                    <a href="#" data-tab="3__5" title="3-5 лет">3-5 лет</a>
                 </li>
                 <li>
-                    <a href="#2__3" title="2-3 года">2-3 года</a>
+                    <a href="#" data-tab="5__7" title="5-7 лет">5-7 лет</a>
                 </li>
                 <li>
-                    <a href="#3__4" title="3-4 года">3-4 года</a>
+                    <a href="#" data-tab="7__9" title="7-9 лет">7-9 лет</a>
                 </li>
                 <li>
-                    <a href="#4__5" title="4-5 лет">4-5 лет</a>
-                </li>
-                <li>
-                    <a href="#5__6" title="5-6 лет">5-6 лет</a>
-                </li>
-                <li>
-                    <a href="#6__7" title="6-7 лет">6-7 лет</a>
-                </li>
-                <li>
-                    <a href="#7__8" title="7-8 лет">7-8 лет</a>
-                </li>
-                <li>
-                    <a href="#8__9" title="9-10 лет">9-10 лет</a>
-                </li>
-                <li>
-                    <a href="#10__14" title="10-14 лет">10-14 лет</a>
+                    <a href="#" data-tab="16+" title="16+">16+</a>
                 </li>
             </ul>
         </li>
     </ul>
 
     <div id="timetable__table__container">
-        <div id="1-1.5" class="table__wrapper">
+        <div id="all__ages" data-content="all__ages" class="table__wrapper active">
             <table class="timetable__table">
                 <thead>
                     <tr class="row__white">
@@ -1251,7 +1236,7 @@
                     </tr>
                 </tbody>
             </table>
-        <div class="small__table__wrapper">
+            <div class="small__table__wrapper">
             <h3 class="small__table__day zagolovok_bigk">Понедельник</h3>
             <ul class="small__table__day__subjects monday">
                 <li class="small__table__subject__wrapper hidden">
@@ -1296,6 +1281,297 @@
             </ul>
         </div>
         </div>
+        <div id="1__3" data-content="1__3" class="table__wrapper">
+            <table class="timetable__table">
+                <thead>
+                <tr class="row__white">
+                    <th></th>
+                    <th>Понедельник</th>
+                    <th>Вторник</th>
+                    <th>Среда</th>
+                    <th>Четверг</th>
+                    <th>Пятница</th>
+                    <th>Суббота</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr class="row__1">
+                    <td class="hours__column">09.00</td>
+                    <td >
+                        <div class="cell__wrapper">
+                            <div class="event__container" data-subject="mini-sad" data-day="monday">
+                                <div class="subject__name">Мини-сад</div>
+                                <div class="subject__hours">
+                                    <div class="hours__start">09.00</div>
+                                    <div class="hours__end">13.00</div>
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                    <td >
+                        <div class="cell__wrapper">
+                            <div class="event__container" data-subject="mini-sad" data-day="tuesday">
+                                <div class="subject__name">Мини-сад</div>
+                                <div class="subject__hours">
+                                    <div class="hours__start">09.00</div>
+                                    <div class="hours__end">13.00</div>
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                    <td >
+                        <div class="cell__wrapper">
+                            <div class="event__container" data-subject="mini-sad" data-day="wednesday">
+                                <div class="subject__name">Мини-сад</div>
+                                <div class="subject__hours">
+                                    <div class="hours__start">09.00</div>
+                                    <div class="hours__end">13.00</div>
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                    <td >
+                        <div class="cell__wrapper">
+                            <div class="event__container" data-subject="mini-sad" data-day="thursday">
+                                <div class="subject__name">Мини-сад</div>
+                                <div class="subject__hours">
+                                    <div class="hours__start">09.00</div>
+                                    <div class="hours__end">13.00</div>
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                    <td >
+                        <div class="cell__wrapper">
+                            <div class="event__container" data-subject="mini-sad" data-day="friday">
+                                <div class="subject__name">Мини-сад</div>
+                                <div class="subject__hours">
+                                    <div class="hours__start">09.00</div>
+                                    <div class="hours__end">13.00</div>
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                    <td >
+                        <div class="cell__wrapper">
+                            <div class="event__container"  data-subject="mini-sad" data-day="saturday">
+                                <div class="subject__name">Мини-сад</div>
+                                <div class="subject__hours">
+                                    <div class="hours__start">09.00</div>
+                                    <div class="hours__end">13.00</div>
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="row__2 row__white">
+                    <td class="hours__column">10.00</td>
+                    <td >
+                        <div class="cell__wrapper">
+                            <div class="event__container" data-subject="earlier-development-1.5" data-day="monday">
+                                <div class="subject__name">Ранее развитие 1.5 - 2 года</div>
+                                <div class="subject__hours">
+                                    <div class="hours__start">10.00</div>
+                                    <div class="hours__end">11.00</div>
+                                </div>
+                            </div>
+                            <div class="event__container empty" data-subject="mother-fitness" data-day="monday"></div>
+                            <div class="event__container empty" data-subject="mini-sad" data-day="monday"></div>
+                        </div>
+                    </td>
+                    <td >
+                        <div class="cell__wrapper">
+                            <div class="event__container" data-subject="logaritmika" data-day="tuesday">
+                                <div class="subject__name">Логаритмика 1.5 - 2 года</div>
+                                <div class="subject__hours">
+                                    <div class="hours__start">10.00</div>
+                                    <div class="hours__end">11.00</div>
+                                </div>
+                            </div>
+                            <div class="event__container empty" data-subject="mini-sad" data-day="tuesday"></div>
+                        </div>
+                    </td>
+                    <td >
+                        <div class="event__container empty" data-subject="mini-sad" data-day="wednesday"></div>
+                    </td>
+                    <td >
+                        <div class="cell__wrapper">
+                            <div class="event__container" data-subject="logaritmika" data-day="thursday">
+                                <div class="subject__name">Логаритмика 1.5 - 2 года</div>
+                                <div class="subject__hours">
+                                    <div class="hours__start">10.00</div>
+                                    <div class="hours__end">11.00</div>
+                                </div>
+                            </div>
+                            <div class="event__container empty" data-subject="mini-sad" data-day="thursday"></div>
+                        </div>
+                    </td>
+                    <td >
+                        <div class="cell__wrapper">
+                            <div class="event__container" data-subject="earlier-development-1.5" data-day="friday">
+                                <div class="subject__name">Ранее развитие 1.5 - 2 года</div>
+                                <div class="subject__hours">
+                                    <div class="hours__start">10.00</div>
+                                    <div class="hours__end">11.00</div>
+                                </div>
+                            </div>
+                            <div class="event__container empty" data-subject="mini-sad" data-day="friday"></div>
+                        </div>
+                    </td>
+                    <td >
+                        <div class="cell__wrapper">
+                            <div class="event__container empty" data-subject="mini-sad" data-day="saturday"></div>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="row__3">
+                    <td>11.00</td>
+                    <td>
+                        <div class="cell__wrapper">
+                            <div class="event__container" data-subject="earlier-development-3" data-day="monday">
+                                <div class="subject__name">Ранее развитие 2 - 3 года</div>
+                                <div class="subject__hours">
+                                    <div class="hours__start">11.00</div>
+                                    <div class="hours__end">12.00</div>
+                                </div>
+                            </div>
+                            <div class="event__container empty" data-subject="mini-sad" data-day="monday"></div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="cell__wrapper">
+                            <div class="event__container" data-subject="logaritmika-3" data-day="tuesday">
+                                <div class="subject__name">Логаритмика 2 - 3 года</div>
+                                <div class="subject__hours">
+                                    <div class="hours__start">11.00</div>
+                                    <div class="hours__end">12.00</div>
+                                </div>
+                            </div>
+                            <div class="event__container empty" data-subject="mini-sad" data-day="tuesday"></div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="cell__wrapper">
+                            <div class="event__container" data-subject="sand-therapy" data-day="wednesday">
+                                <div class="subject__name">Песочная терапия 2 - 5 лет</div>
+                                <div class="subject__hours">
+                                    <div class="hours__start">11.00</div>
+                                    <div class="hours__end">13.00</div>
+                                </div>
+                            </div>
+                            <div class="event__container empty" data-subject="mini-sad" data-day="wednesday"></div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="cell__wrapper">
+                            <div class="event__container" data-subject="logaritmika-3" data-day="thursday">
+                                <div class="subject__name">Логаритмика 2 - 3 года</div>
+                                <div class="subject__hours">
+                                    <div class="hours__start">11.00</div>
+                                    <div class="hours__end">12.00</div>
+                                </div>
+                            </div>
+                            <div class="event__container empty" data-subject="mini-sad" data-day="thursday"></div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="cell__wrapper">
+                            <div class="event__container" data-subject="earlier-development-3" data-day="friday">
+                                <div class="subject__name">Ранее развитие 2 - 3 года</div>
+                                <div class="subject__hours">
+                                    <div class="hours__start">11.00</div>
+                                    <div class="hours__end">12.00</div>
+                                </div>
+                            </div>
+                            <div class="event__container empty" data-subject="mini-sad" data-day="friday"></div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="cell__wrapper">
+                            <div class="event__container empty" data-subject="mini-sad" data-day="saturday"></div>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="row__4 row__white">
+                    <td>12.00</td>
+                    <td>
+                        <div class="cell__wrapper">
+                            <div class="event__container empty" data-subject="mini-sad" data-day="monday"></div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="cell__wrapper">
+                            <div class="event__container empty" data-subject="mini-sad" data-day="tuesday"></div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="event__container empty" data-subject="sand-therapy" data-day="wednesday"></div>
+                        <div class="event__container empty" data-subject="mini-sad" data-day="wednesday"></div>
+                    </td>
+                    <td>
+                        <div class="cell__wrapper">
+                            <div class="event__container empty" data-subject="mini-sad" data-day="thursday"></div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="cell__wrapper">
+                            <div class="event__container empty" data-subject="mini-sad" data-day="friday"></div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="cell__wrapper">
+                            <div class="event__container empty" data-subject="mini-sad" data-day="saturday"></div>
+                        </div>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+            <div class="small__table__wrapper">
+                <h3 class="small__table__day zagolovok_bigk">Понедельник</h3>
+                <ul class="small__table__day__subjects monday">
+                    <li class="small__table__subject__wrapper hidden">
+                        <div class="small__subject__name"></div>
+                        <div class="small__subject__hours"></div>
+                    </li>
+                </ul>
+                <h3 class="small__table__day zagolovok_bigk">Вторник</h3>
+                <ul class="small__table__day__subjects tuesday">
+                    <li class="small__table__subject__wrapper hidden">
+                        <div class="small__subject__name"></div>
+                        <div class="small__subject__hours"></div>
+                    </li>
+                </ul>
+                <h3 class="small__table__day zagolovok_bigk">Среда</h3>
+                <ul class="small__table__day__subjects wednesday">
+                    <li class="small__table__subject__wrapper hidden">
+                        <div class="small__subject__name"></div>
+                        <div class="small__subject__hours"></div>
+                    </li>
+                </ul>
+                <h3 class="small__table__day zagolovok_bigk">Четверг</h3>
+                <ul class="small__table__day__subjects thursday">
+                    <li class="small__table__subject__wrapper hidden">
+                        <div class="small__subject__name"></div>
+                        <div class="small__subject__hours"></div>
+                    </li>
+                </ul>
+                <h3 class="small__table__day zagolovok_bigk">Пятница</h3>
+                <ul class="small__table__day__subjects friday">
+                    <li class="small__table__subject__wrapper hidden">
+                        <div class="small__subject__name"></div>
+                        <div class="small__subject__hours"></div>
+                    </li>
+                </ul>
+                <h3 class="small__table__day zagolovok_bigk">Суббота</h3>
+                <ul class="small__table__day__subjects saturday">
+                    <li class="small__table__subject__wrapper hidden">
+                        <div class="small__subject__name"></div>
+                        <div class="small__subject__hours"></div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
     </div>
 </section>
 

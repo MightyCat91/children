@@ -1,3 +1,11 @@
+.table__wrapper {
+    visibility: hidden;
+}
+
+.table__wrapper.active {
+    visibility: visible;
+}
+
 .small__table__wrapper {
     display: none;
 }
