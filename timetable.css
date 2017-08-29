@@ -1,9 +1,9 @@
 .table__wrapper {
-    visibility: hidden;
+    display: none;
 }
 
 .table__wrapper.active {
-    visibility: visible;
+    display: block;
 }
 
 .small__table__wrapper {
@@ -12,11 +12,12 @@
 
 #age__selector li {
     list-style: none;
-    padding: 10px 0;
+    padding: 0;
+    margin: 0 5px;
     cursor: pointer;
 }
 
-#selected__age {
+#age__selector #selected__age {
     padding: 15px;
     width: 200px;
     background-color: #96a6f7;
@@ -46,20 +47,16 @@
 
 .age__tabs {
     padding: 7px 0;
-    margin-top: 10px;
+    margin-top: 15px;
     position: absolute;
     z-index: 10;
+    left: 0;
     width: 100%;
     background-color: #4dcfff;
 }
 
 .age__tabs.hidden {
     display: none;
-}
-
-#selected__age .age__tabs li {
-    padding: 10px 20px;
-    margin: 0 8px;
 }
 
 .age__tabs li:not([class="selected"]) {
@@ -73,6 +70,8 @@
 .age__tabs a {
     text-decoration: none;
     color: #FFF;
+    display: block;
+    padding: 10px;
 }
 
 #timetable__table__container {
@@ -94,7 +93,7 @@
 .cell__wrapper {
     display: flex;
     flex-direction: column;
-    width: calc(100% + 2px);
+    width: calc(100% + 0px);
     height: calc(100% + 2px);
 }
 
@@ -113,7 +112,7 @@
     top: 0;
     z-index: 0;
     height: 100%;
-    width: 100%;
+    width: calc(100% - 2px);
 }
 
 .event__container.hovered__event {

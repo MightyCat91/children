@@ -57,7 +57,7 @@ jQuery(function ($) {
         $.each(days, function (index, value) {
             var dayContainer = $('.small__table__day__subjects.' + value);
             dayContainer.children(':not(.hidden)').remove();
-            eventCotainer.filter(':not(.empty)[data-day=' + value + ']').map(function (indx, element) {
+            $('.table__wrapper.active').find('.event__container:not(.empty)[data-day=' + value + ']').map(function (indx, element) {
                 var subjectName = $(element).find('.subject__name').text(),
                     subjectTime = $(element).find('.hours__start').text() + ' - ' + $(element).find('.hours__end').text(),
                     newSubject = dayContainer.find('.small__table__subject__wrapper:first-child').clone().removeClass('hidden');
@@ -72,6 +72,9 @@ jQuery(function ($) {
 
     $('[data-tab]').on('click', function () {
         $(this).addClass('active').siblings('[data-tab]').removeClass('active');
-        $(this).siblings('[data-content=' + $(this).data('tab') + ']').addClass('active').siblings('[data-content]').removeClass('active')
+        $('.table__wrapper[data-content=' + $(this).data('tab') + ']').addClass('active').siblings('[data-content]').removeClass('active')
+        if($(window).width() <= 678) {
+            generateMobileTable();
+        }
     })
 });
