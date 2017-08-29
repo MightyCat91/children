@@ -29,13 +29,13 @@ jQuery(function ($) {
         function () {
             var eventName = $(this).data('subject'),
                 eventDay = $(this).data('day'),
-                notEmptyEventContainer = eventCotainer.filter('[data-subject="' + eventName + '"][data-day="' + eventDay + '"]:first');
+                tabletContainer = eventCotainer.closest('.table__wrapper'),
+                notEmptyEventContainer = tabletContainer.find('.event__container[data-subject="' + eventName + '"][data-day="' + eventDay + '"]:first');
 
             notEmptyEventContainer.height('fullHeight').nextAll().addClass('hidden');
             notEmptyEventContainer.prevAll().addClass('hidden');
 
-            eventCotainer
-                .filter('[data-subject="' + eventName + '"][data-day="' + eventDay + '"]:not(:first)')
+            tabletContainer.find('.event__container[data-subject="' + eventName + '"][data-day="' + eventDay + '"]:not(:first)')
                 .addClass('hovered__event');
         },
         function () {
@@ -71,8 +71,10 @@ jQuery(function ($) {
 
 
     $('[data-tab]').on('click', function () {
-        $(this).addClass('active').siblings('[data-tab]').removeClass('active');
-        $('.table__wrapper[data-content=' + $(this).data('tab') + ']').addClass('active').siblings('[data-content]').removeClass('active')
+        if (!$(this).closest('li').hasClass('selected')) {
+            $('.table__wrapper[data-content=' + $(this).data('tab') + ']').addClass('active').siblings('[data-content]').removeClass('active');
+        }
+
         if($(window).width() <= 678) {
             generateMobileTable();
         }
