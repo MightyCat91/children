@@ -1,5 +1,5 @@
 .submit__free__lesson__form {
-    max-width: 60%;
+    max-width: 70%;
     margin: 0 auto;
 }
 
@@ -28,20 +28,23 @@
     margin-bottom: 1.5em;
 }
 
+.form__group td{
+    width: 100%;
+}
+
 .input__header {
-    margin: .5em 0;
+    margin: 1em 0 .5em;
     font-size: 18px;
+}
+
+.fio td {
+    width: 50%;
 }
 
 .input__header.required::after {
     content: '*';
     padding: 0 5px;
     font-size: 18px;
-}
-
-.input__with__label__wrapper {
-    display: flex;
-    justify-content: space-between;
 }
 
 .input__with__label {
@@ -51,26 +54,19 @@
 .input__label {
     font-size: 14px;
     padding-left: 5px;
-    padding-top: 5px;
+    padding-top: 2px;
 }
 
 .margin__right {
     margin-right: 2em;
 }
 
-.birthday .input__with__label__wrapper {
-    justify-content: flex-start;
-}
-
-.birthday .input__with__label {
-    max-width: 70px;
-}
-
-.birthday .input__with__label:last-child {
-    max-width: 100px;
+.birthday td {
+    width: 30%;
 }
 
 #submit__lesson__form {
+    margin: 2em auto 0;
     background-color: #31c8fd;
     border: none;
     box-shadow: none;

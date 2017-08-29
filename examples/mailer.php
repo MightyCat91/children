@@ -1,18 +1,19 @@
 <?php
-//Кому адрес
-define('TO','rp-detki@mail.ru');
-//Кому имя
-define('TO_NAME','Детки Клуб - Творческий центр для всей семьи');
+//от кого адрес
+$from = 'rp-detki@mail.ru';
+// Кому придет письмо
+$to = 'rp-detki@mail.ru';
+//от кого имя
+$name = 'Детки Клуб - Творческий центр для всей семьи';
 //Заголовок сообщения
-define('EMAIL_SUBJECT','Заявка на бесплатное пробное занятие в "Детки Клуб - Творческий центр для всей семьи"');
+$subject = 'Заявка на бесплатное пробное занятие в "Детки Клуб - Творческий центр для всей семьи"';
 //Текст сообщения
 $message = '<html>
                     <head>
-                        <title>' . EMAIL_SUBJECT . '</title>
+                        <title>' . $subject . '</title>
                     </head>
                     <body>
-                        <p>Новая заявка!</p>
-                        <br>
+                        <p>Спасибо за Вашу заявку</p>
                         <p>Имя: ' . $_POST['name'] . '</p>
                         <p>Телефон: ' . $_POST['phone'] . '</p>
                         <p>Эл. адрес: ' . $_POST['email'] . '</p>
@@ -34,20 +35,19 @@ function sentViaPhpMailer($message)
     $email = new PHPMailer;
 
     $email->CharSet = 'UTF-8';
-    $email->setFrom($_POST['email'], $_POST['name']);
-    $email->AddAddress(TO, TO_NAME);
-    $email->subject = EMAIL_SUBJECT;
+    $email->setFrom($from, $name);
+    $email->AddAddress($to, $_POST['name']);
+    $email->$subject = $subject;
     $email->Body = $message;
     $email->isHTML(true);
 
-    // Рассылка
+// Рассылка
     if($email->send()) {
-        $data = 'Ваша заявка на пробное занятие отправлена!';
+        $data = 'На указанный E-mail адрес отправлено письмо!';
 
     } else {
         $data = 'К сожалению, что-то пошло не так. Попробуйте записаться позже!';
     }
-    echo $data;
 }
 
 // отправка письма стандартными средствами php
@@ -56,12 +56,12 @@ function sentViaStandartMail($message)
 
     $headers = "MIME-Version: 1.0" . "\r\n";
     $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
-    $headers .= 'From: ' . $_POST['name'] . ' <' . $_POST['email'] . '>' . "\r\n";
-    $headers .= "Bcc: ". TO . "\r\n";
+    $headers .= 'From: ' . $name . ' <' . $from . '>' . "\r\n";
+    $headers .= "Bcc: ". $from . "\r\n";
 
-    $resutlt = mail(TO, EMAIL_SUBJECT, $message, $headers);
+    $resutlt = mail($to, $subject, $message, $headers);
     if($resutlt) {
-        $data = 'Ваша заявка на пробное занятие отправлена!';
+        $data = 'На указанный E-mail адрес отправлено письмо!';
 
     } else {
         $data = 'К сожалению, что-то пошло не так. Попробуйте записаться позже!';

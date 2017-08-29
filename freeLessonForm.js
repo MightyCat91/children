@@ -1,7 +1,7 @@
 jQuery(function($){
     $("#phone").mask("+7 (999) 999-99-99");
 
-    $('.submit__free__lesson__form').on('submit', function (event) {
+    $('#submit__lesson__form').on('click', function (event) {
         var formData = {
             'name'     : $('input[name=name]').val(),
             'email'    : $('input[name=email]').val(),
@@ -15,8 +15,8 @@ jQuery(function($){
             url: "mailer.php",
             data: formData,
             success: function(data){
-                console.log(data);
-                $('.submit__message').append(data);
+                $('.submit__free__lesson__form input:not(#submit__lesson__form)').val('');
+                $('.submit__message').html(data);
             },
             error: function (xhr, ajaxOptions, thrownError) {
                 alert(xhr.status);
