@@ -1,7 +1,7 @@
 jQuery(function($){
     $("#phone").mask("+7 (999) 999-99-99");
 
-    $('#submit__lesson__form').on('click', function (event) {
+    $('.submit__free__lesson__form').on('submit', function (event) {
         var formData = {
             'name'     : $('input[name=name]').val(),
             'email'    : $('input[name=email]').val(),

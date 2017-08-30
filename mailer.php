@@ -34,7 +34,7 @@ function sentViaPhpMailer($message)
     $email = new PHPMailer;
 
     $email->CharSet = 'UTF-8';
-    $email->setFrom($_POST['email'], $_POST['name']);
+    $email->setFrom(TO, TO_NAME);
     $email->AddAddress(TO, TO_NAME);
     $email->subject = EMAIL_SUBJECT;
     $email->Body = $message;
@@ -56,7 +56,7 @@ function sentViaStandartMail($message)
 
     $headers = "MIME-Version: 1.0" . "\r\n";
     $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
-    $headers .= 'From: ' . $_POST['name'] . ' <' . $_POST['email'] . '>' . "\r\n";
+    $headers .= 'From: ' . TO_NAME . ' <' . TO . '>' . "\r\n";
     $headers .= "Bcc: ". TO . "\r\n";
 
     $resutlt = mail(TO, EMAIL_SUBJECT, $message, $headers);
