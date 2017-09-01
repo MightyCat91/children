@@ -21,8 +21,8 @@
       <file leaf-file-name="timetable.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/timetable.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
-              <caret line="366" column="125" lean-forward="true" selection-start-line="366" selection-start-column="125" selection-end-line="366" selection-end-column="125" />
+            <state relative-caret-position="413">
+              <caret line="5553" column="126" lean-forward="true" selection-start-line="5553" selection-start-column="126" selection-end-line="5553" selection-end-column="126" />
               <folding>
                 <element signature="n#div#0;n#div#0;n#section#0;n#p#0;n#td#0;n#tr#0;n#table#0;n#td#0;n#tr#0;n#table#0;n#td#0;n#tr#1;n#table#0;n#td#0;n#tr#0;n#table#0;n#td#0;n#tr#1;n#table#0;n#td#0;n#tr#0;n#table#0;n#td#0;n#tr#0;n#table#0;n#td#1;n#tr#0;n#table#0;n#td#0;n#tr#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="false" />
                 <element signature="n#tr#0;n#tbody#0;n#table#0;n#div#0;n#div#0;n#section#0;n#p#0;n#td#0;n#tr#0;n#table#0;n#td#0;n#tr#0;n#table#0;n#td#0;n#tr#1;n#table#0;n#td#0;n#tr#0;n#table#0;n#td#0;n#tr#1;n#table#0;n#td#0;n#tr#0;n#table#0;n#td#0;n#tr#0;n#table#0;n#td#1;n#tr#0;n#table#0;n#td#0;n#tr#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="false" />
@@ -259,12 +259,12 @@
       <workItem from="1503667080576" duration="2770000" />
       <workItem from="1503675302973" duration="44068000" />
       <workItem from="1503923185755" duration="6492000" />
-      <workItem from="1504252225853" duration="16636000" />
+      <workItem from="1504252225853" duration="16806000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="101315000" />
+    <option name="totallyTimeSpent" value="101485000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1096" extended-state="6" />
@@ -931,8 +931,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/timetable.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="366" column="125" lean-forward="true" selection-start-line="366" selection-start-column="125" selection-end-line="366" selection-end-column="125" />
+        <state relative-caret-position="413">
+          <caret line="5553" column="126" lean-forward="true" selection-start-line="5553" selection-start-column="126" selection-end-line="5553" selection-end-column="126" />
           <folding>
             <element signature="n#div#0;n#div#0;n#section#0;n#p#0;n#td#0;n#tr#0;n#table#0;n#td#0;n#tr#0;n#table#0;n#td#0;n#tr#1;n#table#0;n#td#0;n#tr#0;n#table#0;n#td#0;n#tr#1;n#table#0;n#td#0;n#tr#0;n#table#0;n#td#0;n#tr#0;n#table#0;n#td#1;n#tr#0;n#table#0;n#td#0;n#tr#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#tr#0;n#tbody#0;n#table#0;n#div#0;n#div#0;n#section#0;n#p#0;n#td#0;n#tr#0;n#table#0;n#td#0;n#tr#0;n#table#0;n#td#0;n#tr#1;n#table#0;n#td#0;n#tr#0;n#table#0;n#td#0;n#tr#1;n#table#0;n#td#0;n#tr#0;n#table#0;n#td#0;n#tr#0;n#table#0;n#td#1;n#tr#0;n#table#0;n#td#0;n#tr#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="false" />
