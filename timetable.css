@@ -97,14 +97,25 @@
     height: calc(100% + 2px);
 }
 
-.row__white {
+.row__head th {
+    padding: 5px 0;
     background-color: #fff;
+    text-transform: uppercase;
 }
 
 .event__container {
     z-index: 1;
     position: inherit;
     flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-top: 1px solid #F9E0FE;
+    border-bottom: 1px solid #F9E0FE;
+}
+
+.event__container > div {
+    margin: 5px 0;
 }
 
 .event__container.empty {
@@ -122,7 +133,12 @@
 }
 
 .subject__name {
-    padding-top: 5px;
+    font-weight: 600;
+}
+
+.subject__hours {
+    display: flex;
+    justify-content: space-evenly;
 }
 
 .hidden {
@@ -133,128 +149,48 @@
     height: 100%;
 }
 
-div[data-subject="mini-sad"] {
-    background-color: #d7ffd7;
+.row__1 {
+    background-color: #D7FFD7;
 }
 
-div[data-subject="mother-fitness"] {
-    background-color: #f2d7ff;
+.row__2 {
+    background-color: #F2D7FF;
 }
 
-div[data-subject="mother-yoga"] {
-    background-color: #ffc079;
+.row__3 {
+    background-color: #FFFFBF;
 }
 
-div[data-subject="earlier-development-1.5"] {
-    background-color: #ffffbf;
+.row__4 {
+    background-color: #EEFFCA;
 }
 
-div[data-subject="logaritmika"] {
-    background-color: #b8dd42;
+.row__5 {
+    background-color: #CFF2FE;
 }
 
-div[data-subject="classic-horeography"] {
-    background-color: #91a6f3;
+.row__6 {
+    background-color: #AAFF55;
 }
 
-div[data-subject="earlier-development-3"] {
-    background-color: #71f3b7;
+.row__7 {
+    background-color: #FFEFB0;
 }
 
-div[data-subject="english-3"] {
-    background-color: #f392df;
+.row__8 {
+    background-color: #C5F0FE;
 }
 
-div[data-subject="logaritmika-3"] {
-    background-color: #f39a97;
+.row__9 {
+    background-color: #FFFFEA;
 }
 
-div[data-subject="child-fitness"] {
-    background-color: #80bcf3;
+.row__10 {
+    background-color: #D5FFFF;
 }
 
-div[data-subject="sand-therapy"] {
-    background-color: #6cf382;
-}
-
-div[data-subject="earlier-development-4"] {
-    background-color: #c6f386;
-}
-
-div[data-subject="music"] {
-    background-color: #f3dba5;
-}
-
-div[data-subject="logaritmika-4"] {
-    background-color: #d7b5f3;
-}
-
-div[data-subject="man-fitness"] {
-    background-color: #f3a3d5;
-}
-
-div[data-subject="mother-horeography"] {
-    background-color: #86f375;
-}
-
-div[data-subject="english-7"] {
-    background-color: #f3c659;
-}
-
-div[data-subject="classic-horeography-4group"] {
-    background-color: #59c4f3;
-}
-
-div[data-subject="classic-horeography-1group"] {
-    background-color: #f398b2;
-}
-
-div[data-subject="schooll-preparation"] {
-    background-color: #7cf391;
-}
-
-div[data-subject="classic-horeography-2group"] {
-    background-color: #b9daf3;
-}
-
-div[data-subject="acting-skills"] {
-    background-color: #f3c8a9;
-}
-
-div[data-subject="english-9"] {
-    background-color: #f38ccc;
-}
-
-div[data-subject="schooll-preparation-6"] {
-    background-color: #01f39e;
-}
-
-div[data-subject="etiket"] {
-    background-color: #f2f300;
-}
-
-div[data-subject="history-art"] {
-    background-color: #f39900;
-}
-
-div[data-subject="classic-horeography-4group-old"] {
-    background-color: #f3c4dc;
-}
-
-div[data-subject="mother-horeography-evening"] {
-    background-color: #b6a6f3;
-}
-
-div[data-subject="classic-horeography-3group"] {
-    background-color: #83d2f3;
-}
-
-div[data-subject="acting-skills-6"] {
-    background-color: #81f3b4;
-}
-
-div[data-subject="schooll-preparation-7"] {
-    background-color: #f0f36f;
+.row__11 {
+    background-color: #DBE954;
 }
 
 @media screen and (max-width: 678px) {
@@ -282,6 +218,7 @@ div[data-subject="schooll-preparation-7"] {
         border-bottom: 1px solid #fff;
         font-size: 14px;
         cursor: default;
+        align-items: center;
     }
 
     .small__table__subject__wrapper:hover {
